@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700&display=swap');
+* {
+  /* font-family: 'ui-sans-serif, system-ui, -apple-system, blinkmacsystemfont, segoe ui, roboto, helvetica neue, arial, noto sans, sans-serif, apple color emoji, segoe ui emoji, segoe ui symbol, noto color emoji, u8, karla'; */
+  color: #000;
+  font-size: 15px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Karla', sans-serif;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a.register {
+  background: rgb(8, 62, 158);
+  border-radius: 8px 8px 8px 0;
+  color: #fff;
+  padding: 1rem 1.2rem;
+}
+
+a.register:hover {
+  background: rgb(8, 62, 158) !important;
+}
