@@ -1,18 +1,20 @@
 <template>
   <div class="main-ctn">
     <section class="overview">
-      <div class="overview-text">
-        <h1>The Better Way <br>to Save & Invest</h1>
-        <p>PiggyVest helps over 2 million customers achieve their financial goals by helping them save and invest with ease.</p>
-        <span>Earn 5% - 15% interests on savings and over 25% return on investments.</span>
-        <nuxt-link to="/register" class="register">Create A Free Account</nuxt-link>
-        <div class="store">
-          <img src="@/assets/images/appstore.svg" alt="">
-          <img src="@/assets/images/playstore.png" alt="">
+      <div class="overview-ctn">
+        <div class="overview-text">
+          <h1>The Better Way <br>to Save & Invest</h1>
+          <p>PiggyVest helps over 2 million customers achieve their financial goals by helping them save and invest with ease.</p>
+          <span>Earn 5% - 15% interests on savings and over 25% return on investments.</span>
+          <nuxt-link to="/register" class="register">Create A Free Account</nuxt-link>
+          <div class="store">
+            <img src="@/assets/images/appstore.svg" alt="">
+            <img src="@/assets/images/playstore.png" alt="">
+          </div>
         </div>
-      </div>
-      <div class="overview-img">
-        <img src="@/assets/images/piggy-hero-cover-photo.jpg" class="piggy-hero-cover-photo" alt="">
+        <div class="overview-img">
+          <!-- <img src="@/assets/images/piggy-hero-cover-photo.jpg" class="piggy-hero-cover-photo" alt=""> -->
+        </div>
       </div>
     </section>
     <section class="security">
@@ -34,17 +36,25 @@ export default {
 
 <style scoped>
 .main-ctn>* {
-  margin: 50px;
-  width: calc(100%-40px);
+  /* display: flex; */
+  /* justify-content:stretch; */
+  /* margin: 50px; */
+  /* width: calc(100%-50px); */
 }
 
 /* overview */
 .overview {
+ height: 100vh;
+ margin-top: 160px;
+}
+
+.overview-ctn {
   display: flex;
   justify-content: space-around;
   background: #dff3fc;
   border-radius: 20px 20px 20px 0;
   height: 400px;
+  /* height: 100%; */
 }
 
 .overview-text {
@@ -60,6 +70,7 @@ export default {
   color: rgb(8, 62, 158);
   font-size: 3rem;
   font-weight: 700;
+  letter-spacing: -1.5px;
 }
 
 .overview-text p:first-of-type {
@@ -102,14 +113,45 @@ export default {
 
 .overview-img {
   width: 40%;
+  max-width: 400px;
+  height: 130%;
+  background-image: url('@/assets/images/piggy-hero-cover-photo.jpg');
+  background-size: cover;
+  border-radius: 20px 20px 20px 0;
+  position: relative;
+  bottom: 45px;
 }
 
 .piggy-hero-cover-photo {
   border-radius: 20px 20px 20px 0;
-  height: 133%;
-  width: 80%;
+  height: 100%;
+  width: 90%;
   position: relative;
   bottom: 45px;
+}
+
+@media(max-width: 1024px) {
+  .overview-img {
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 920px) {
+   .overview-img {
+     display: none;
+   }
+
+   .overview-text {
+     align-items: center;
+   }
+
+   .store {
+     justify-content: center;
+   }
+
+   section>div {
+     /* width: 740px; */
+   }
 }
 
 /* security */

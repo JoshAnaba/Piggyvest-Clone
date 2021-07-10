@@ -1,6 +1,6 @@
 <template>
   <div class="header-ctn-wrapper">
-    <img src="@/assets/images/piggyvest-logo.png" alt="">
+    <img src="@/assets/images/piggyvest-logo-1.png" alt="">
     <nav>
       <ul>
         <li>
@@ -27,11 +27,18 @@
 .header-ctn-wrapper {
   height: 80px;
   width: 100%;
+  max-width: 1280px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 40px;
-  /* position: absolute; */
+  padding: 1rem 1.5rem;
+  position: absolute;
+  top: 0;
+  background: #fff;
+  z-index: 20;
+  transition: 0.5s ease-in-out;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 img {
@@ -45,18 +52,35 @@ nav ul {
 }
 
 nav li {
-  margin: 0 8px;
+  margin-left: 16px;
 }
 
 li a {
   padding: 1rem 1.2rem;
+  height: 190px;
   font-weight: 500;
+  font-size: 16px;
+  white-space: nowrap;
 }
 
 li a:hover {
   background-color:rgb(243, 244, 246);
   border-radius: 8px 8px 8px 0;
   transition: 0.5s ease-in-out;
+}
+
+@media (max-width: 1024px) {
+ 
+}
+
+@media (max-width: 920px) {
+  .header-ctn-wrapper {
+    /* padding: 0 4rem; */
+  }
+   .header-ctn-wrapper nav {
+    display: none;
+  }
+
 }
 
 </style>
