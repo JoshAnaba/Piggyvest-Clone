@@ -1,6 +1,6 @@
 <template>
   <div class="header-ctn-wrapper">
-    <img src="@/assets/images/piggyvest-logo-1.png" class="piggyvest-logo" alt="">
+    <img src="@/assets/images/piggyvest-logo-1.png" class="piggyvest-logo" alt="" @click="$router.push('/')">
     <nav>
       <ul class="header-links">
         <li>
