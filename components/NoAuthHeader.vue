@@ -1,10 +1,57 @@
 <template>
   <div class="header-ctn-wrapper">
-    <img src="@/assets/images/piggyvest-logo-1.png" alt="">
+    <img src="@/assets/images/piggyvest-logo-1.png" class="piggyvest-logo" alt="">
     <nav>
-      <ul>
+      <ul class="header-links">
         <li>
           <nuxt-link to="/save">Save</nuxt-link>
+          <ul class="header-link-links">
+            <li>
+              <nuxt-link to="/save/piggybank">
+                <img src="@/assets/images/piggybank-icon.svg" alt="">
+                <div class="inner-link">
+                  <span>Piggybank</span>
+                  <span>Strict Savings Automtically. Weekly, Daily Or Monthly</span>
+                </div>
+              </nuxt-link>
+            </li>
+            <li>
+              <nuxt-link to="/save/safelock">
+                <img src="@/assets/images/safelock-icon.svg" alt="">
+                <div class="inner-link">
+                  <span>Safelock</span>
+                  <span>Lock Funds to Avoid Temptations. Upfront Interest</span>
+                </div>
+              </nuxt-link>
+            </li>
+            <li>
+              <nuxt-link to="/save/targets">
+                <img src="@/assets/images/target-savings-icon.svg" alt="">
+                <div class="inner-link">
+                  <span>Target Savings</span>
+                  <span>Reach Your Unique Individual Saving Goals</span>
+                </div>
+              </nuxt-link>
+            </li>
+            <li>
+              <nuxt-link to="/save/flex-naira">
+                <img src="@/assets/images/flex-icon.svg" alt="">
+                <div class="inner-link">
+                  <span>Flex Naira</span>
+                  <span>Flexible Savings For Emergency Free Transfers, Withdrawals Etc</span>
+                </div>
+              </nuxt-link>
+            </li>
+            <li>
+              <nuxt-link to="/save/flex-dollar">
+                <img src="@/assets/images/flex-dollar-icon.svg" alt="">
+                <div class="inner-link">
+                  <span>Flex Dollar</span>
+                  <span>Save & Grow Your Wealth In Foreign Currencies</span>
+                </div>
+              </nuxt-link>
+            </li>
+          </ul>
         </li>
         <li>
           <nuxt-link to="/invest">Invest</nuxt-link>
@@ -19,9 +66,28 @@
           <nuxt-link to="/register" class="register">Create A Free Account</nuxt-link>
         </li>
       </ul>
+      <button class="header-menu" @click="showMenu = !showMenu">
+        <span v-if="!showMenu" class="material-icons">
+          menu
+        </span>
+        <span v-else class="material-icons">
+          close
+        </span>
+      </button>
+
     </nav>
   </div>
 </template>
+
+<script>
+export default {
+  data () {
+    return {
+      showMenu: false
+    }
+  }
+}
+</script>
 
 <style scoped>
 .header-ctn-wrapper {
@@ -41,25 +107,29 @@
   margin-right: auto;
 }
 
-img {
+.piggyvest-logo {
   transform: scale(0.5);
   transform-origin: 0;
   cursor: pointer;
 }
 
-nav ul {
+nav .header-links {
   display: flex;
 }
 
-nav li {
+nav .header-links>li {
   margin-left: 16px;
+  position: relative;
 }
 
-li a {
+.header-links > li > a {
   padding: 1rem 1.2rem;
-  height: 190px;
+  height: 60px;
   font-weight: 500;
   font-size: 16px;
+}
+
+.header-links > li > a {
   white-space: nowrap;
 }
 
@@ -69,16 +139,86 @@ li a:hover {
   transition: 0.5s ease-in-out;
 }
 
+.header-links>li>a:hover+.header-link-links {
+  display: flex;
+}
+
+.header-link-links {
+  background: #fff;
+  box-shadow: -1px 5px 15px 1px rgba(18, 94, 164, 0.08);
+  position: absolute;
+  top: 35px;
+  width: 550px;
+  display: none;
+  /* display: flex; */
+  flex-wrap: wrap;
+  align-items: flex-start;
+  border-radius: 8px 8px 8px 0;
+}
+
+.header-link-links:hover {
+  display: flex;
+}
+
+.header-link-links li a {
+  display: flex;
+  /* width: 100% */
+}
+
+.header-link-links li a div {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-link-links li {
+  width: 50%;
+  height: 80px;
+}
+
+.header-link-links li a {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+}
+
+.header-link-links img {
+  transform: scale(0.5);
+  transform-origin: 0 0;
+  position: relative;
+  left: 10px;
+}
+
+.header-link-links li span:nth-of-type(1) {
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.header-link-links li span:nth-of-type(2) {
+  font-size: 11px;
+  line-height: 15px;
+}
+
+@media (min-width: 920px) {
+  .header-menu {
+    display: none;
+  }
+}
+
 @media (max-width: 1024px) {
  
 }
 
 @media (max-width: 920px) {
-  .header-ctn-wrapper {
+  /* .header-ctn-wrapper { */
     /* padding: 0 4rem; */
-  }
+  /* } */
    .header-ctn-wrapper nav {
     display: none;
+  }
+
+  .header-menu {
+    display: block;
   }
 
 }

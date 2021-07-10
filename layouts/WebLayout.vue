@@ -16,7 +16,7 @@ export default {
       if ((document.body.scrollTop > 80) || (document.documentElement.scrollTop > 80)) {
          headerCtn.style.position = 'fixed'
       } else {
-        headerCtn.style.position = ''
+        headerCtn.style.position = 'absolute'
       }
     }
   }
