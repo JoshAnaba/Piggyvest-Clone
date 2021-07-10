@@ -26,17 +26,7 @@ export default {
   layout: 'WebLayout',
   head(){
     return {
-      title: "The Better Way To Save and Invest Online - Piggyvest",
-      script: [
-        {
-          hid: "googleapis",
-          src: "https://maps.googleapis.com/maps/api/js?key=AIzaSyD08zkjWBcZ6HEdD-Z2TzjT5nRRsQVJaZ0",
-          defer: true,
-          callback: () => {
-            this.hasLoaded = true
-          }
-        }
-      ],
+      title: "The Better Way To Save and Invest Online - Piggyvest"
     }
   },
 }

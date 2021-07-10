@@ -8,10 +8,12 @@
 <style scoped>
 .web-ctn-wrapper {
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .page-container {
   margin-top: 80px;
+  overflow: auto;
 }
 </style>
