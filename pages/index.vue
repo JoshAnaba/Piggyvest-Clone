@@ -127,7 +127,7 @@ export default {
 .overview-img {
   width: 40%;
   max-width: 400px;
-  height: 130%;
+  height: 145%;
   background-image: url('@/assets/images/piggy-hero-cover-photo.jpg');
   background-size: cover;
   border-radius: 20px 20px 20px 0;
@@ -144,10 +144,63 @@ export default {
   bottom: 45px;
 }
 
-@media(max-width: 1024px) {
+@media (max-width: 1024px) {
+
+  .overview {
+    margin-top: 100px;
+  }
+  
   .overview-img {
+    display: none;
     margin-left: auto;
   }
+
+  .overview-text {
+    align-items: center;
+  }
+  
+  .overview-ctn {
+    justify-content: center;
+    text-align: center;
+    height: 360px;
+  }
+
+  .overview-text {
+    width: 65%;
+  }
+
+  .overview-text a {
+    margin-left: 0;
+  }
+
+  .overview-text h1 {
+    font-size: 23px;
+    line-height: 28px;
+  }
+
+  .overview-text span {
+    font-size: 11px;
+  }
+
+  .store {
+    display: flex;
+    justify-content: center;
+  }
+
+  .store img:nth-of-type(1) {
+  transform: scale(1.2);
+  transform-origin: 0;
+  cursor: pointer;
+  position: relative;
+  left: 15px;
+}
+
+.store img:nth-of-type(2) {
+  transform: scale(0.6);
+  cursor: pointer;
+  position: relative;
+  left: 15px;
+}
 }
 
 /* security */
@@ -194,21 +247,10 @@ export default {
 }
 
 @media (max-width: 1024px) {
-   .overview-img {
-     display: none;
-   }
+  .security-content {
+    flex-direction: column;
+  }
 
-   .overview-text {
-     align-items: center;
-   }
-
-   .store {
-     justify-content: center;
-   }
-
-   .security-content {
-     flex-direction: column;
-   }
 }
 
 </style>

@@ -213,11 +213,15 @@ li a:hover {
   width: 33px;
   height: 38px;
   border-radius: 3px;
-  border: 2px solid #000;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  border: none
+}
+
+.smaller-header button:focus {
+  border: 2px solid #000;
 }
 
 .smaller-header button span {
@@ -236,8 +240,13 @@ li a:hover {
 @media (max-width: 1024px) {
   .header-ctn-wrapper {
     padding: 0 5rem;
+    height: 50px;
   }
-   .header-ctn-wrapper nav,
+
+  .piggyvest-logo {
+    transform: scale(0.3);
+  }
+  .header-ctn-wrapper nav,
   .piggyvest-logo.main-logo {
     display: none;
   }
