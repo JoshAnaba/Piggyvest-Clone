@@ -6,7 +6,7 @@
           <h1>The Better Way <br>to Save & Invest</h1>
           <p>PiggyVest helps over 2 million customers achieve their financial goals by helping them save and invest with ease.</p>
           <span>Earn 5% - 15% interests on savings and over 25% return on investments.</span>
-          <nuxt-link to="/register" class="register">Create A Free Account</nuxt-link>
+          <nuxt-link to="dashboard/register" class="register">Create A Free Account</nuxt-link>
           <div class="store">
             <img src="@/assets/images/appstore.svg" alt="">
             <img src="@/assets/images/playstore.png" alt="">
@@ -18,7 +18,19 @@
       </div>
     </section>
     <section class="security">
-      <h2>Security Comes First</h2>
+      <div class="security-ctn">
+        <h2>Security Comes First</h2>
+        <div class="security-content">
+          <div>
+            <img src="@/assets/images/key-icon.svg" alt="">
+            <p>PiggyVest uses the highest levels of Internet Security, and it is secured by 256 bits SSL security encryption to ensure that your information is completely protected from fraud.</p>
+          </div>
+          <div>
+            <img src="@/assets/images/shine-icon.svg" alt="">
+            <p>Two-factor authentication (2FA) by default on all PiggyVest accounts, to securely protect you from unauthorised access and impersonation.</p>
+          </div>
+        </div>
+      </div>
     </section>
   </div>
 </template>
@@ -35,12 +47,12 @@ export default {
 </script>
 
 <style scoped>
-.main-ctn>* {
+/* .main-ctn>* { */
   /* display: flex; */
   /* justify-content:stretch; */
   /* margin: 50px; */
   /* width: calc(100%-50px); */
-}
+/* } */
 
 /* overview */
 .overview {
@@ -50,7 +62,8 @@ export default {
 
 .overview-ctn {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: 20px;
   background: #dff3fc;
   border-radius: 20px 20px 20px 0;
   height: 400px;
@@ -66,9 +79,9 @@ export default {
 }
 
 .overview-text h1 {
-  line-height: 3.75rem;
+  line-height: 52px;
   color: rgb(8, 62, 158);
-  font-size: 3rem;
+  font-size: 44px;
   font-weight: 700;
   letter-spacing: -1.5px;
 }
@@ -120,6 +133,7 @@ export default {
   border-radius: 20px 20px 20px 0;
   position: relative;
   bottom: 45px;
+  margin-right: 20px;
 }
 
 .piggy-hero-cover-photo {
@@ -136,7 +150,50 @@ export default {
   }
 }
 
-@media (max-width: 920px) {
+/* security */
+
+.security {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.security h2 {
+  font-size: 33px;
+  line-height: 40px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* .security-ctn {
+  display: flex;
+} */
+
+.security-content {
+  display: flex;
+}
+
+.security-content div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 45px;
+  width: 50%;
+}
+
+.security-content p {
+  font-size: 16px;
+  text-align: center;
+  line-height: 23px;
+}
+
+.security-content img {
+  margin-bottom: 20px;
+  transform: scale(1.2);
+}
+
+@media (max-width: 1024px) {
    .overview-img {
      display: none;
    }
@@ -149,16 +206,9 @@ export default {
      justify-content: center;
    }
 
-   section>div {
-     /* width: 740px; */
+   .security-content {
+     flex-direction: column;
    }
 }
 
-/* security */
-
-.security {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 </style>

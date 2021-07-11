@@ -1,12 +1,17 @@
 <template>
-  <div class="web-ctn-wrapper">
-    <NoAuthHeader/>
+  <div class="web-ctn-wrapper" :class="[fixedPosition ? 'fixed-position': '']">
+    <NoAuthHeader @menu-active="menuActive"/>
     <Nuxt class="page-container"/>
   </div>
 </template>
 
 <script>
 export default {
+  data(){
+    return {
+      fixedPosition: null
+    }
+  },
   mounted(){
     //  const ctn = document.querySelector('.web-ctn-wrapper')
      const headerCtn = document.querySelector('.header-ctn-wrapper')
@@ -18,6 +23,11 @@ export default {
       } else {
         headerCtn.style.position = 'absolute'
       }
+    }
+  },
+  methods: {
+    menuActive(val) {
+      this.fixedPosition=val
     }
   }
 }
@@ -37,12 +47,14 @@ export default {
   /* overflow: auto; */
 }
 
-@media (max-width: 920px) {
-  .page-container {
-    padding: 0 4rem;
+@media (max-width: 1024px) {
+  .page-container,
+  .header-ctn-wrapper {
+    padding: 0 5rem;
+  }
+  .fixed-position {
+    overflow: hidden;
   }
 }
-
-
 
 </style>

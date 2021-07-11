@@ -1,6 +1,6 @@
 <template>
   <div class="header-ctn-wrapper">
-    <img src="@/assets/images/piggyvest-logo-1.png" class="piggyvest-logo" alt="" @click="$router.push('/')">
+    <img src="@/assets/images/piggyvest-logo.png" class="piggyvest-logo main-logo" alt="" @click="$router.push('/')">
     <nav>
       <ul class="header-links">
         <li>
@@ -60,12 +60,15 @@
           <nuxt-link to="/stories">Stories</nuxt-link>
         </li>
         <li>
-          <nuxt-link to="/login">Login</nuxt-link>
+          <nuxt-link to="dashboard/login">Login</nuxt-link>
         </li>
         <li>
-          <nuxt-link to="/register" class="register">Create A Free Account</nuxt-link>
+          <nuxt-link to="dahsboard/register" class="register">Create A Free Account</nuxt-link>
         </li>
       </ul>
+    </nav>
+    <div class="smaller-header">
+      <img src="@/assets/images/piggyvest-logo.png" class="piggyvest-logo sec-logo" alt="" @click="$router.push('/')">
       <button class="header-menu" @click="showMenu = !showMenu">
         <span v-if="!showMenu" class="material-icons">
           menu
@@ -74,8 +77,7 @@
           close
         </span>
       </button>
-
-    </nav>
+    </div>
   </div>
 </template>
 
@@ -84,6 +86,13 @@ export default {
   data () {
     return {
       showMenu: false
+    }
+  },
+  watch: {
+    showMenu:{
+      handler() {
+      this.$emit('menu-active', this.showMenu)
+      }
     }
   }
 }
@@ -199,28 +208,50 @@ li a:hover {
   line-height: 15px;
 }
 
-@media (min-width: 920px) {
-  .header-menu {
+.smaller-header button {
+  background: transparent;
+  width: 33px;
+  height: 38px;
+  border-radius: 3px;
+  border: 2px solid #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.smaller-header button span {
+  transform: scale(1.4);
+  color: rgb(8, 62, 158);
+  font-weight: 700;
+  /* width: 100%; */
+}
+
+@media (min-width: 1024px) {
+  .smaller-header {
     display: none;
   }
 }
 
 @media (max-width: 1024px) {
- 
-}
-
-@media (max-width: 920px) {
-  /* .header-ctn-wrapper { */
-    /* padding: 0 4rem; */
-  /* } */
-   .header-ctn-wrapper nav {
+  .header-ctn-wrapper {
+    padding: 0 5rem;
+  }
+   .header-ctn-wrapper nav,
+  .piggyvest-logo.main-logo {
     display: none;
   }
 
-  .header-menu {
-    display: block;
+  .header-ctn-wrapper {
+    justify-content: center;
   }
 
+  .smaller-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
 }
 
 </style>
