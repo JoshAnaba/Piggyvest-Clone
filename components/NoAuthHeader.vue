@@ -239,7 +239,7 @@ li a:hover {
 
 @media (max-width: 1024px) {
   .header-ctn-wrapper {
-    padding: 0 5rem;
+    padding: 0 6rem;
     height: 50px;
   }
 

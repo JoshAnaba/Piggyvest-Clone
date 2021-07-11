@@ -50,7 +50,7 @@ export default {
 @media (max-width: 1024px) {
   .page-container,
   .header-ctn-wrapper {
-    padding: 0 5rem;
+    padding: 0 6rem;
   }
   .fixed-position {
     overflow: hidden;

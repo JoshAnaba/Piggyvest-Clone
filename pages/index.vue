@@ -162,11 +162,12 @@ export default {
   .overview-ctn {
     justify-content: center;
     text-align: center;
-    height: 360px;
+    /* min-height: 360px; */
+    /* padding: 0 10rem; */
   }
 
   .overview-text {
-    width: 65%;
+    width: 100%;
   }
 
   .overview-text a {
